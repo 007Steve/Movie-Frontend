@@ -1,9 +1,37 @@
-*{
+body{
     margin: 0px;
     padding: 0px;
 }
 
 #reviews-button{
-    width: 20px;
-    height: 40px;
+    width: 120px;
+    height: 70px;
+    position: relative;
+    left: 350px;
+    top: 50px;
 }
+
+img {
+width: 540px;
+border-radius: 50px;
+}
+
+#movie-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: darkgrey;;
+    padding: 0px;
+  
+   
+  }
+  
+  .delete{
+      width: 120px;
+      height: 70px;
+      border-radius: 10px;
+      background-color: #ff3b89;
+      background-image: linear-gradient(147deg, #ff3b89 0%, #FF2525 74%);
+
+  }
+
+  
