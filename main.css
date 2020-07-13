@@ -3,29 +3,38 @@ body{
     padding: 0px;
 }
 
-#reviews-button{
+.reviews-button{
     width: 120px;
-    height: 70px;
+    height: 90px;
     position: relative;
-    left: 350px;
-    top: 50px;
+    left: 240px;
+    top: 40px;
 }
-
-img {
-width: 540px;
-border-radius: 50px;
+#movie-test{
+    display: none;
+    visibility: visible;
+}
+ img {
+ width: 540px;
+ border-radius: 50px;
 }
 
 #movie-container {
     display: grid;
     grid-template-columns: auto auto auto;
-    background-color: darkgrey;;
+    background-color: white;
     padding: 0px;
   
    
   }
+
+  .movies-card{
+      padding-left: 20px;
+      padding-top: 20px;
+  }
   
   .delete{
+      top: -10px;
       width: 120px;
       height: 70px;
       border-radius: 10px;
