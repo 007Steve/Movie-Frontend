@@ -10,7 +10,13 @@ class Movie {
     this.renderMovie()
     console.log(this.title);
  }
- // add create 
+ // add LIKES
+
+ likeMovie(e) {
+     var like = document.getElementById('likes')
+     like.innerHTML ++ 
+     
+ }
  
  deleteMovie(e){
     const id  = this.id
@@ -25,23 +31,26 @@ class Movie {
 
  }
  
-  
+ 
 
 
  movieHTML(){
     //show_hide
     return ` 
     
-     <img onClick="show_hide()"src="${this.image}"  alt=""/>
+     <img class="movie-pic"src="${this.image}"  alt=""/>
 
      <h2>${this.title}</h2>
      <div id="movie-texts">
-     <p> <strong>Description: </strong>${this.description}</p>
-     <h4><strong>Year: </strong>${this.year}</h4>
-     <h3><strong>Category: </strong>${this.category}</h3>
-     <div>
+     <p class="texts"> <strong>Description: </strong>${this.description}</p>
+     <h4 class="texts"><strong>Year: </strong>${this.year}</h4>
+     <h3 class="texts"><strong>Category: </strong>${this.category}</h3>
+     <p class="texts"> Likes <p id="likes"> 0</p></p>
+     </div>
      <button class="delete" data-id="${this.id}">Delete</button>
-     <img id="reviews-button" onClick="" src="https://cdn.dribbble.com/users/2087607/screenshots/6451099/free-youtube-comments-icon-png-download.jpg"  alt="">
+     <button class="like" onclick="likeMovie(e)" data-id="${this.id}">like</button>
+    
+     <img class="reviews-button"  src="https://cdn.dribbble.com/users/2087607/screenshots/6451099/free-youtube-comments-icon-png-download.jpg"  alt="">
  `
  // get on click to work to hide and show movies-text and nested reviews
   }
@@ -54,7 +63,8 @@ class Movie {
     movieCard.innerHTML += this.movieHTML() 
     movieContainer.appendChild(movieCard)
     movieCard.addEventListener('click', e => {
-        if (e.target.className.includes('delete')) this.deleteMovie(e) // added e.listener
+        if (e.target.className.includes('delete')) this.deleteMovie(e) 
+        if  (e.target.className.includes('like')) this.likeMovie(e) 
     })
 }
 
